@@ -81,7 +81,7 @@
             color: #b71c1c;
         }
 
-        .download-btn {
+        /* .download-btn {
     background: linear-gradient(135deg, #1b5e20, #2e7d32);
     color: white;
     padding: 14px 28px;
@@ -95,6 +95,33 @@
 .download-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+} */
+        .checkbox-container {
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.download-btn {
+    margin-top: 25px;
+    background: linear-gradient(135deg, var(--green), var(--light-green));
+    color: white;
+    padding: 14px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.download-btn.enabled {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.download-btn.enabled:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
         .footer {
@@ -157,13 +184,34 @@
         <p><strong>Participation implies full and unconditional acceptance of all terms and conditions.</strong></p>
     </div>
 
-    <div style="text-align:center; margin-top:30px;">
+    <div class="container">
+    <h1>Participant Agreement</h1>
+    <p>Please read and accept the Terms & Conditions before downloading the agreement.</p>
+
+    <!-- Acceptance Checkbox -->
+    <div class="checkbox-container">
+        <input type="checkbox" id="acceptTerms">
+        <label for="acceptTerms">
+            I have read and agree to the Terms & Conditions
+        </label>
+    </div>
+
+    <!-- Download Button -->
+    <br>
+    <a id="downloadLink" href="#" onclick="return validateDownload()">
+        <button id="downloadBtn" class="download-btn" disabled>
+            📄 Download Participant Agreement (PDF)
+        </button>
+    </a>
+</div>
+
+    <!-- <div style="text-align:center; margin-top:30px;">
     <a href="participant-agreement.pdf" download>
         <button class="download-btn">
             📄 Download Participant Agreement
         </button>
     </a>
-</div>
+</div> -->
 
 
 </div>
